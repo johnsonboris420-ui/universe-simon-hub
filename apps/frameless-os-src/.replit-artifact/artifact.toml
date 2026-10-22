@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "FRAMELESS OS"
+version = "1.0.0"
+id = "artifacts/frameless-os"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 8081
+
+[services.development]
+run = "pnpm --filter @workspace/frameless-os run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/frameless-os", "run", "build" ]
+publicDir = "artifacts/frameless-os/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "8081"
+BASE_PATH = "/"

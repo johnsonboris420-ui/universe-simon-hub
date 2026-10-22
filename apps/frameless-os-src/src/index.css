@@ -1,0 +1,355 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --button-outline: rgba(0, 212, 255, 0.15);
+  --badge-outline: rgba(0, 212, 255, 0.08);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 212, 255, 0.04);
+  --elevate-2: rgba(0, 212, 255, 0.09);
+
+  --background: 220 60% 4%;
+  --foreground: 185 100% 90%;
+  --border: 185 60% 16%;
+  --card: 220 55% 7%;
+  --card-foreground: 185 100% 88%;
+  --card-border: 185 50% 18%;
+  --sidebar: 220 60% 5%;
+  --sidebar-foreground: 185 80% 75%;
+  --sidebar-border: 185 50% 14%;
+  --sidebar-primary: 185 100% 50%;
+  --sidebar-primary-foreground: 220 60% 4%;
+  --sidebar-accent: 185 40% 15%;
+  --sidebar-accent-foreground: 185 100% 80%;
+  --sidebar-ring: 185 100% 50%;
+  --popover: 220 55% 7%;
+  --popover-foreground: 185 100% 88%;
+  --popover-border: 185 50% 18%;
+  --primary: 185 100% 50%;
+  --primary-foreground: 220 60% 4%;
+  --secondary: 140 100% 50%;
+  --secondary-foreground: 220 60% 4%;
+  --muted: 220 40% 12%;
+  --muted-foreground: 185 40% 55%;
+  --accent: 185 80% 30%;
+  --accent-foreground: 185 100% 88%;
+  --destructive: 0 100% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 185 50% 18%;
+  --ring: 185 100% 50%;
+  --chart-1: 185 100% 50%;
+  --chart-2: 140 100% 50%;
+  --chart-3: 270 100% 65%;
+  --chart-4: 30 100% 55%;
+  --chart-5: 0 100% 55%;
+
+  --app-font-sans: 'Inter', 'JetBrains Mono', monospace;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --radius: 0.25rem;
+  --shadow-2xs: 0 0 8px rgba(0, 212, 255, 0.1);
+  --shadow-xs: 0 0 12px rgba(0, 212, 255, 0.15);
+  --shadow-sm: 0 0 16px rgba(0, 212, 255, 0.2);
+  --shadow: 0 0 24px rgba(0, 212, 255, 0.2);
+  --shadow-md: 0 0 32px rgba(0, 212, 255, 0.25);
+  --shadow-lg: 0 0 48px rgba(0, 212, 255, 0.3);
+  --shadow-xl: 0 0 64px rgba(0, 212, 255, 0.35);
+  --shadow-2xl: 0 0 96px rgba(0, 212, 255, 0.4);
+  --tracking-normal: 0.05em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+.dark {
+  --button-outline: rgba(0, 212, 255, 0.15);
+  --badge-outline: rgba(0, 212, 255, 0.08);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(0, 212, 255, 0.04);
+  --elevate-2: rgba(0, 212, 255, 0.09);
+
+  --background: 220 60% 4%;
+  --foreground: 185 100% 90%;
+  --border: 185 60% 16%;
+  --card: 220 55% 7%;
+  --card-foreground: 185 100% 88%;
+  --card-border: 185 50% 18%;
+  --sidebar: 220 60% 5%;
+  --sidebar-foreground: 185 80% 75%;
+  --sidebar-border: 185 50% 14%;
+  --sidebar-primary: 185 100% 50%;
+  --sidebar-primary-foreground: 220 60% 4%;
+  --sidebar-accent: 185 40% 15%;
+  --sidebar-accent-foreground: 185 100% 80%;
+  --sidebar-ring: 185 100% 50%;
+  --popover: 220 55% 7%;
+  --popover-foreground: 185 100% 88%;
+  --popover-border: 185 50% 18%;
+  --primary: 185 100% 50%;
+  --primary-foreground: 220 60% 4%;
+  --secondary: 140 100% 50%;
+  --secondary-foreground: 220 60% 4%;
+  --muted: 220 40% 12%;
+  --muted-foreground: 185 40% 55%;
+  --accent: 185 80% 30%;
+  --accent-foreground: 185 100% 88%;
+  --destructive: 0 100% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 185 50% 18%;
+  --ring: 185 100% 50%;
+  --chart-1: 185 100% 50%;
+  --chart-2: 140 100% 50%;
+  --chart-3: 270 100% 65%;
+  --chart-4: 30 100% 55%;
+  --chart-5: 0 100% 55%;
+
+  --shadow-2xs: 0 0 8px rgba(0, 212, 255, 0.1);
+  --shadow-xs: 0 0 12px rgba(0, 212, 255, 0.15);
+  --shadow-sm: 0 0 16px rgba(0, 212, 255, 0.2);
+  --shadow: 0 0 24px rgba(0, 212, 255, 0.2);
+  --shadow-md: 0 0 32px rgba(0, 212, 255, 0.25);
+  --shadow-lg: 0 0 48px rgba(0, 212, 255, 0.3);
+  --shadow-xl: 0 0 64px rgba(0, 212, 255, 0.35);
+  --shadow-2xl: 0 0 96px rgba(0, 212, 255, 0.4);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 0 16px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 16px rgba(0, 212, 255, 0.8), 0 0 32px rgba(0, 212, 255, 0.4); }
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes threat-flash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(255, 0, 64, 0.1); }
+}
+
+.glow-cyan {
+  color: hsl(185, 100%, 50%);
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.8), 0 0 24px rgba(0, 212, 255, 0.4);
+}
+
+.glow-green {
+  color: hsl(140, 100%, 50%);
+  text-shadow: 0 0 8px rgba(0, 255, 128, 0.8), 0 0 24px rgba(0, 255, 128, 0.4);
+}
+
+.glow-red {
+  color: hsl(0, 100%, 55%);
+  text-shadow: 0 0 8px rgba(255, 0, 64, 0.8), 0 0 24px rgba(255, 0, 64, 0.4);
+}
+
+.border-glow {
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.2), inset 0 0 8px rgba(0, 212, 255, 0.05);
+}
+
+.card-dark {
+  background: hsl(220, 55%, 7%);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.terminal-text {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: 0.05em;
+}
+
+.animate-flicker {
+  animation: flicker 4s infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.scan-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

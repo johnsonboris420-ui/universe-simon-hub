@@ -53,6 +53,10 @@ export default function HubPage() {
             <a href={`${B}/hub-assets/heatmap_freq.png`} target="_blank" rel="noreferrer"><img src={`${B}/hub-assets/heatmap_freq.png`} alt="gene x study heatmap" className="rounded-lg border border-border/50 w-full" /></a>
             <div className="flex gap-2"><a className={btn} target="_blank" rel="noreferrer" href={`${B}/hub-assets/top_protein_changes.png`}>Top protein changes</a><a className={btn} target="_blank" rel="noreferrer" href={`${B}/hub-assets/cancer_report.md`}>Full report (.md)</a></div>
           </Tile>
+          <Tile icon={Sparkles} title="Frameless OS" tag="Desktop UI demo (front end only, no server terminal)" color="bg-cyan-500/15 text-cyan-300">
+            <p className="text-sm text-muted-foreground">Your Quantum-Evolve-System desktop shell: boot screen, windows, taskbar, investor slideshow. Server features are switched off on the public site for safety.</p>
+            <div className="flex gap-2"><a href={`${B}/frameless/`} className={btn}>Open Frameless OS</a><a href={`${B}/gallery/`} className={btn}>Fractal poster gallery</a></div>
+          </Tile>
           <Tile icon={Sparkles} title="Fractal Gallery" tag="AQFLE evolving art + 4D Mandelbulb (art / ALife, not mining)" color="bg-purple-500/15 text-purple-300">
             <div className="grid grid-cols-3 gap-2">
               {["aqfle_output.png", "mandelbulb_4d_v1.png", "mandelbulb_4d_v2.png", "mandelbulb_4d_v3.png", "mandelbulb_4d_2d.png", "aqfle_fitness.png"].map(f => (

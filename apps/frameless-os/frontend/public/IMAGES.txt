@@ -1,0 +1,1 @@
+Original full-size images live in johnsonboris420-ui/Quantum-Evolve-System; compressed copies are in crypto-dashboard/public/apps/frameless-os/images.
