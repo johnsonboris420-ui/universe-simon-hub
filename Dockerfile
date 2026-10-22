@@ -1,6 +1,6 @@
 # One container: Express API + built dashboard + LearnChain (Flask, internal) + hub assets.
 # Needs a Postgres DATABASE_URL at runtime. Read-only: no keys, no signing.
-FROM node:24.22.1-bookworm-slim
+FROM node:26.11.1-bookworm-slim
 RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv ca-certificates && rm -rf /var/lib/apt/lists/* \
  && npm install -g pnpm@10.34.6
 WORKDIR /app
