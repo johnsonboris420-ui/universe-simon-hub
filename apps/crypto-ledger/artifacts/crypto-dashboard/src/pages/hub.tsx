@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { useConfig } from "@/lib/wallet";
-import { Wallet, Blocks, Dna, Sparkles, ExternalLink } from "lucide-react";
+import { Wallet, Blocks, Dna, Sparkles, ExternalLink, ShoppingBag } from "lucide-react";
 
 const B = import.meta.env.BASE_URL.replace(/\/$/, "");
 type Cancer = { studies: Record<string, { name: string; sequenced: number; genes: Record<string, { freq_pct: number }> }> };
@@ -36,8 +36,21 @@ export default function HubPage() {
       <div className="max-w-6xl mx-auto space-y-6 animate-in">
         <div>
           <h1 className="text-4xl font-display font-bold text-foreground">Universe Simon Hub</h1>
-          <p className="text-muted-foreground mt-2">Four small learning projects in one place. Everything is read-only or play money. Nothing here can move real funds.</p>
+          <p className="text-muted-foreground mt-2">The home of Universe Simon: shop, art and learning projects in one place. Everything is read-only or play money. Nothing here can move real funds.</p>
         </div>
+        <Card id="shop" className="border-purple-400/40 bg-purple-500/5">
+          <CardHeader className="flex flex-row items-center gap-3 py-5">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-purple-500/20 text-purple-300"><ShoppingBag className="w-5 h-5" /></div>
+            <div><CardTitle>Universe Simon Shop</CardTitle><p className="text-xs text-muted-foreground mt-0.5">Original fractal art by Szymon: prints, posters and stickers</p></div>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2">
+            <a href="https://www.redbubble.com/people/SzymonFractals/shop" target="_blank" rel="noreferrer" className={btn}>Redbubble shop <ExternalLink className="w-3 h-3" /></a>
+            <a href="https://www.redbubble.com/people/SzymonFractals/shop?collections=4599821" target="_blank" rel="noreferrer" className={btn}>Fractal Posters <ExternalLink className="w-3 h-3" /></a>
+            <a href="https://www.redbubble.com/people/SzymonFractals/shop?collections=4599822" target="_blank" rel="noreferrer" className={btn}>Fractal Stickers <ExternalLink className="w-3 h-3" /></a>
+            <a href={`${B}/gallery/`} className={btn}>Gallery</a>
+            <a href={`${B}/gallery/#pay-eth`} className={btn}>Pay in ETH</a>
+          </CardContent>
+        </Card>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Tile icon={Wallet} title="Crypto Tracker" tag="Live, read-only wallet viewer (Ethereum + BNB Chain)" color="bg-cyan-500/15 text-cyan-300">
             <p className="text-sm text-muted-foreground">Balances via public RPC + Blockscout, prices from CoinGecko, value history, spam-token filter, new-address alerts, Etherscan CSV import.</p>
