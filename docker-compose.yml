@@ -1,0 +1,19 @@
+# Local "production-like" run:  docker compose up --build  ->  http://localhost:8080
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: hub
+      POSTGRES_PASSWORD: hub-local-only   # local throwaway DB, not a real secret
+      POSTGRES_DB: hub
+    volumes: [dbdata:/var/lib/postgresql/data]
+  app:
+    build: .
+    ports: ["8080:8080"]
+    environment:
+      DATABASE_URL: postgresql://hub:hub-local-only@db:5432/hub
+      WALLET_ADDRESS: ${WALLET_ADDRESS:-}     # optional default wallet to watch (public address only)
+      ALLOW_CSV_IMPORT: ${ALLOW_CSV_IMPORT:-false}
+    depends_on: [db]
+volumes:
+  dbdata:

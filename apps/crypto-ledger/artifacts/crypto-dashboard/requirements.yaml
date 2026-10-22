@@ -1,0 +1,18 @@
+packages:
+  "framer-motion": "Animations for page transitions and interactive elements"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "date-fns": "For formatting dates in transaction tables"
+  "lucide-react": "Beautiful consistent iconography"
+
+images:
+  - path: "artifacts/crypto-dashboard/public/images/crypto-hero-bg.png"
+    description: "Abstract sleek deep dark navy and cyan glowing geometric network waves, professional crypto finance background, highly detailed 3d render"
+    aspect_ratio: "16:9"
+  - path: "artifacts/crypto-dashboard/public/images/avatar.png"
+    description: "3d stylized abstract user avatar for a crypto trader profile, dark background, cyan lighting, polished"
+    aspect_ratio: "1:1"
+
+notes:
+  - Uses @workspace/api-client-react hooks to fetch API data
+  - Includes rich fallback data directly in components to ensure the UI looks stunning even if the backend API isn't populated or returns empty lists

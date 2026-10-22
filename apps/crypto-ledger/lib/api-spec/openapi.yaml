@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: Api
+  version: 0.1.0
+  description: Crypto Blockchain Dashboard API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: transactions
+    description: Transaction operations
+  - name: portfolio
+    description: Portfolio operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /transactions:
+    get:
+      operationId: getTransactions
+      tags: [transactions]
+      summary: Get all transactions
+      responses:
+        "200":
+          description: List of transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+  /portfolio:
+    get:
+      operationId: getPortfolio
+      tags: [portfolio]
+      summary: Get portfolio summary
+      responses:
+        "200":
+          description: Portfolio summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Portfolio"
+  /token-transfers:
+    get:
+      operationId: getTokenTransfers
+      tags: [transactions]
+      summary: Get token transfer history
+      responses:
+        "200":
+          description: List of token transfers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TokenTransfer"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        hash:
+          type: string
+        chainName:
+          type: string
+        status:
+          type: string
+        action:
+          type: string
+        token:
+          type: string
+        from:
+          type: string
+        fromInfo:
+          type: string
+        to:
+          type: string
+        toInfo:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - hash
+        - chainName
+        - status
+        - action
+        - token
+        - from
+        - fromInfo
+        - to
+        - toInfo
+        - createdAt
+    Portfolio:
+      type: object
+      properties:
+        totalValueUsd:
+          type: number
+        change24h:
+          type: number
+        change24hPercent:
+          type: number
+        holdings:
+          type: array
+          items:
+            $ref: "#/components/schemas/Holding"
+      required:
+        - totalValueUsd
+        - change24h
+        - change24hPercent
+        - holdings
+    Holding:
+      type: object
+      properties:
+        symbol:
+          type: string
+        name:
+          type: string
+        amount:
+          type: number
+        valueUsd:
+          type: number
+        priceUsd:
+          type: number
+        change24hPercent:
+          type: number
+        chain:
+          type: string
+      required:
+        - symbol
+        - name
+        - amount
+        - valueUsd
+        - priceUsd
+        - change24hPercent
+        - chain
+    TokenTransfer:
+      type: object
+      properties:
+        id:
+          type: integer
+        hash:
+          type: string
+        status:
+          type: string
+        method:
+          type: string
+        blockNo:
+          type: integer
+        dateTime:
+          type: string
+        from:
+          type: string
+        fromNametag:
+          type: string
+        to:
+          type: string
+        toNametag:
+          type: string
+        amount:
+          type: string
+        valueUsd:
+          type: string
+        token:
+          type: string
+      required:
+        - id
+        - hash
+        - status
+        - method
+        - blockNo
+        - dateTime
+        - from
+        - fromNametag
+        - to
+        - toNametag
+        - amount
+        - valueUsd
+        - token

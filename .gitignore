@@ -1,0 +1,33 @@
+# deps / builds
+node_modules/
+.venv/
+venv/
+dist/
+build/
+*.tsbuildinfo
+.pnpm-store/
+__pycache__/
+*.pyc
+.pytest_cache/
+# local databases & data
+*.db
+*.sqlite*
+pgdata/
+pgl/
+data/
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+# user exports (may contain personal wallet data)
+*.csv
+# misc
+.DS_Store
+.replit
+.local/
+.cache/
+logs/
+*.log

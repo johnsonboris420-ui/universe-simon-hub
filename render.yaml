@@ -1,0 +1,17 @@
+# Render Blueprint: New > Blueprint > pick this repo. Creates a free Postgres + one Docker web service.
+databases:
+  - name: hub-db
+    plan: free
+services:
+  - type: web
+    name: universe-simon-hub
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: { name: hub-db, property: connectionString }
+      - key: WALLET_ADDRESS        # leave empty for a public demo (visitors paste an address)
+        sync: false
+      - key: ALLOW_CSV_IMPORT
+        value: "false"

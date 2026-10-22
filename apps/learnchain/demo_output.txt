@@ -1,0 +1,73 @@
+
+======================================================================
+1. Hashing: tiny change -> totally different fingerprint
+======================================================================
+sha256('hello') = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+sha256('hellp') = fdd7585e08c4e2afd71dcabdb4636c89d557a3f42db9e2040c8bbd1708aa4ce7
+
+======================================================================
+2. Proof-of-work cost grows ~16x per extra leading zero
+======================================================================
+difficulty 1: avg 0.0000s, avg nonce tries       10, e.g. hash 03694a75cc0db3ed...
+difficulty 2: avg 0.0015s, avg nonce tries      503, e.g. hash 0031af89c624526f...
+difficulty 3: avg 0.0158s, avg nonce tries     5154, e.g. hash 00022ad4e791817e...
+difficulty 4: avg 0.4243s, avg nonce tries   128835, e.g. hash 0000ba802c924ed3...
+difficulty 5: avg 1.8873s, avg nonce tries   620096, e.g. hash 00000b84e61e3390...
+
+======================================================================
+3. Make wallets (real ECDSA secp256k1 key pairs)
+======================================================================
+alice    address d381d47a99167ca9041deff1...
+bob      address 89a1672db6e68a2d58761a9d...
+mallory  address 1faa851acf22f9f479c3981e...
+
+======================================================================
+4. Alice mines a block and earns 50 fake LEARN
+======================================================================
+Mined block 1 in 0.004s, nonce 788, hash 0008be2cc33d00ec342f...
+Balances: alice 50 | bob 0
+
+======================================================================
+5. Alice signs and sends 20 LEARN to Bob (goes into the mempool)
+======================================================================
+Mempool size: 1 | signature valid: True
+After Bob mines: alice 30 | bob 70
+
+======================================================================
+6. Attacks that the rules reject
+======================================================================
+REJECTED  Overspend: Alice sends 1000
+          -> Insufficient funds: has 30 LEARN available, tried to send 1000
+REJECTED  Forgery: Mallory signs a tx spending Alice's coins
+          -> Invalid signature: this transaction was not signed by the sender (forged or altered)
+REJECTED  Altered: valid tx, amount changed after signing
+          -> Invalid signature: this transaction was not signed by the sender (forged or altered)
+REJECTED  Double-spend: Alice (30 LEARN) tries to send 25 twice before mining
+          -> Insufficient funds: has 5 LEARN available, tried to send 25
+
+======================================================================
+7. Validate the chain, then tamper with history
+======================================================================
+Chain valid? True | blocks: 4
+Mallory edits block 2 so Bob 'received' 2000 instead of 20...
+  DETECTED: Block 2: stored hash doesn't match contents (block was tampered with)
+  DETECTED: Block 2: transaction 9ee3c3c6ce has an invalid signature
+  DETECTED: Block 2: transaction 9ee3c3c6ce overspends
+  DETECTED: Block 3: transaction ddb01f2ac2 overspends
+She also recomputes block 2's hash (redoing its proof of work)...
+  DETECTED: Block 2: transaction 9ee3c3c6ce has an invalid signature
+  DETECTED: Block 2: transaction 9ee3c3c6ce overspends
+  DETECTED: Block 3: previous_hash doesn't match block 2's hash (chain link broken)
+  DETECTED: Block 3: transaction ddb01f2ac2 overspends
+(re-mining took 0.081s, and every later block would need re-mining too, faster than honest miners)
+
+======================================================================
+8. Several nodes: longest VALID chain wins
+======================================================================
+lengths before sync: A 4 B 2 C 1
+node B adopts longer chain? True
+node C adopts longer chain? True
+lengths after sync:  A 4 B 4 C 4
+C builds a longer chain (8 blocks) but cheats in it. A adopts it? False -> invalid chains are ignored
+
+All LEARN coins above are play money. Nothing left this computer.

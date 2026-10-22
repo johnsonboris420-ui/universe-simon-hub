@@ -1,0 +1,3406 @@
+{
+ "genes": [
+  "TP53",
+  "EGFR",
+  "IDH1",
+  "KRAS",
+  "PIK3CA",
+  "BRAF",
+  "PTEN",
+  "APC",
+  "NF1",
+  "CDKN2A",
+  "ATRX",
+  "BRCA1",
+  "BRCA2",
+  "SMAD4",
+  "ARID1A"
+ ],
+ "studies": {
+  "gbm_tcga": {
+   "name": "Glioblastoma Multiforme (TCGA, Firehose Legacy)",
+   "sequenced": 290,
+   "all_samples": 619,
+   "genes": {
+    "TP53": {
+     "mutations": 101,
+     "mutated_samples": 84,
+     "freq_pct": 28.97,
+     "types": {
+      "Missense_Mutation": 81,
+      "Frame_Shift_Del": 6,
+      "Splice_Site": 6,
+      "Nonsense_Mutation": 4,
+      "In_Frame_Del": 2,
+      "Frame_Shift_Ins": 1,
+      "Splice_Region": 1
+     },
+     "top_changes": [
+      [
+       "R248Q",
+       6
+      ],
+      [
+       "R175H",
+       5
+      ],
+      [
+       "R282W",
+       4
+      ],
+      [
+       "R273H",
+       4
+      ],
+      [
+       "R158H",
+       3
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 95,
+     "mutated_samples": 77,
+     "freq_pct": 26.55,
+     "types": {
+      "Missense_Mutation": 90,
+      "In_Frame_Ins": 3,
+      "Nonsense_Mutation": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "A289V",
+       13
+      ],
+      [
+       "G598V",
+       12
+      ],
+      [
+       "A289T",
+       5
+      ],
+      [
+       "R222C",
+       4
+      ],
+      [
+       "R108K",
+       4
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 15,
+     "mutated_samples": 15,
+     "freq_pct": 5.17,
+     "types": {
+      "Missense_Mutation": 15
+     },
+     "top_changes": [
+      [
+       "R132H",
+       13
+      ],
+      [
+       "R132G",
+       2
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.69,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "G12D",
+       2
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 35,
+     "mutated_samples": 32,
+     "freq_pct": 11.03,
+     "types": {
+      "Missense_Mutation": 26,
+      "In_Frame_Del": 3,
+      "Translation_Start_Site": 2,
+      "Splice_Site": 1,
+      "Nonsense_Mutation": 1,
+      "Nonstop_Mutation": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "E545K",
+       4
+      ],
+      [
+       "M1043V",
+       2
+      ],
+      [
+       "R88Q",
+       2
+      ],
+      [
+       "M1?",
+       2
+      ],
+      [
+       "H1047R",
+       2
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 6,
+     "mutated_samples": 6,
+     "freq_pct": 2.07,
+     "types": {
+      "Missense_Mutation": 6
+     },
+     "top_changes": [
+      [
+       "V600E",
+       5
+      ],
+      [
+       "G596D",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 93,
+     "mutated_samples": 90,
+     "freq_pct": 31.03,
+     "types": {
+      "Missense_Mutation": 50,
+      "Nonsense_Mutation": 16,
+      "Frame_Shift_Del": 16,
+      "Splice_Site": 6,
+      "Frame_Shift_Ins": 3,
+      "Splice_Region": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R233*",
+       5
+      ],
+      [
+       "R335*",
+       3
+      ],
+      [
+       "R130*",
+       3
+      ],
+      [
+       "T277I",
+       2
+      ],
+      [
+       "T319*",
+       2
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.34,
+     "types": {
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "S1434G",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 40,
+     "mutated_samples": 32,
+     "freq_pct": 11.03,
+     "types": {
+      "Nonsense_Mutation": 13,
+      "Frame_Shift_Del": 10,
+      "Splice_Site": 7,
+      "Missense_Mutation": 6,
+      "Frame_Shift_Ins": 3,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R192*",
+       2
+      ],
+      [
+       "K1661Gfs*36",
+       2
+      ],
+      [
+       "X196_splice",
+       2
+      ],
+      [
+       "X1445_splice",
+       1
+      ],
+      [
+       "L844F",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.69,
+     "types": {
+      "Frame_Shift_Del": 1,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "L78Hfs*41",
+       1
+      ],
+      [
+       "W110*",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 17,
+     "mutated_samples": 17,
+     "freq_pct": 5.86,
+     "types": {
+      "Frame_Shift_Del": 7,
+      "Missense_Mutation": 5,
+      "Nonsense_Mutation": 4,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "W2001Cfs*14",
+       1
+      ],
+      [
+       "E886Lfs*18",
+       1
+      ],
+      [
+       "L1827Cfs*9",
+       1
+      ],
+      [
+       "Q177*",
+       1
+      ],
+      [
+       "K1424Gfs*65",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 4,
+     "mutated_samples": 4,
+     "freq_pct": 1.38,
+     "types": {
+      "Missense_Mutation": 4
+     },
+     "top_changes": [
+      [
+       "P982L",
+       1
+      ],
+      [
+       "R1203Q",
+       1
+      ],
+      [
+       "A622V",
+       1
+      ],
+      [
+       "R979H",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 4,
+     "mutated_samples": 4,
+     "freq_pct": 1.38,
+     "types": {
+      "Missense_Mutation": 4
+     },
+     "top_changes": [
+      [
+       "A2698T",
+       1
+      ],
+      [
+       "D224V",
+       1
+      ],
+      [
+       "H1752N",
+       1
+      ],
+      [
+       "H1966R",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.34,
+     "types": {
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "P544S",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.69,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "S1929R",
+       1
+      ],
+      [
+       "M918V",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "brca_tcga": {
+   "name": "Breast Invasive Carcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 982,
+   "all_samples": 1108,
+   "genes": {
+    "TP53": {
+     "mutations": 304,
+     "mutated_samples": 301,
+     "freq_pct": 30.65,
+     "types": {
+      "Missense_Mutation": 179,
+      "Nonsense_Mutation": 45,
+      "Frame_Shift_Del": 41,
+      "Splice_Site": 20,
+      "Frame_Shift_Ins": 13,
+      "In_Frame_Del": 5,
+      "Splice_Region": 1
+     },
+     "top_changes": [
+      [
+       "R175H",
+       18
+      ],
+      [
+       "R273H",
+       10
+      ],
+      [
+       "R196*",
+       9
+      ],
+      [
+       "R342*",
+       7
+      ],
+      [
+       "H193R",
+       7
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 5,
+     "mutated_samples": 5,
+     "freq_pct": 0.51,
+     "types": {
+      "Missense_Mutation": 5
+     },
+     "top_changes": [
+      [
+       "E114K",
+       2
+      ],
+      [
+       "D314G",
+       1
+      ],
+      [
+       "D1051N",
+       1
+      ],
+      [
+       "T273A",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 5,
+     "mutated_samples": 4,
+     "freq_pct": 0.41,
+     "types": {
+      "Missense_Mutation": 5
+     },
+     "top_changes": [
+      [
+       "R338T",
+       1
+      ],
+      [
+       "K81N",
+       1
+      ],
+      [
+       "Y235C",
+       1
+      ],
+      [
+       "R132C",
+       1
+      ],
+      [
+       "A179D",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 6,
+     "mutated_samples": 6,
+     "freq_pct": 0.61,
+     "types": {
+      "Missense_Mutation": 6
+     },
+     "top_changes": [
+      [
+       "G12V",
+       3
+      ],
+      [
+       "D92Y",
+       1
+      ],
+      [
+       "G12C",
+       1
+      ],
+      [
+       "G12D",
+       1
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 355,
+     "mutated_samples": 319,
+     "freq_pct": 32.48,
+     "types": {
+      "Missense_Mutation": 347,
+      "In_Frame_Del": 4,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Ins": 1,
+      "Splice_Region": 1
+     },
+     "top_changes": [
+      [
+       "H1047R",
+       128
+      ],
+      [
+       "E545K",
+       63
+      ],
+      [
+       "E542K",
+       41
+      ],
+      [
+       "N345K",
+       16
+      ],
+      [
+       "H1047L",
+       12
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 5,
+     "mutated_samples": 5,
+     "freq_pct": 0.51,
+     "types": {
+      "Missense_Mutation": 4,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "D449N",
+       1
+      ],
+      [
+       "K698R",
+       1
+      ],
+      [
+       "E309*",
+       1
+      ],
+      [
+       "E433K",
+       1
+      ],
+      [
+       "L537S",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 37,
+     "mutated_samples": 35,
+     "freq_pct": 3.56,
+     "types": {
+      "Missense_Mutation": 15,
+      "Frame_Shift_Del": 7,
+      "Nonsense_Mutation": 7,
+      "Frame_Shift_Ins": 5,
+      "Splice_Site": 2,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "N48Tfs*6",
+       2
+      ],
+      [
+       "S287*",
+       2
+      ],
+      [
+       "V166Sfs*14",
+       1
+      ],
+      [
+       "H64_Y65del",
+       1
+      ],
+      [
+       "E73Kfs*4",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 24,
+     "mutated_samples": 16,
+     "freq_pct": 1.63,
+     "types": {
+      "Missense_Mutation": 18,
+      "Frame_Shift_Del": 4,
+      "Nonsense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "E425Vfs*28",
+       1
+      ],
+      [
+       "V312G",
+       1
+      ],
+      [
+       "E1726Q",
+       1
+      ],
+      [
+       "D2817H",
+       1
+      ],
+      [
+       "E109*",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 30,
+     "mutated_samples": 28,
+     "freq_pct": 2.85,
+     "types": {
+      "Missense_Mutation": 10,
+      "Nonsense_Mutation": 8,
+      "Splice_Site": 5,
+      "Frame_Shift_Del": 5,
+      "In_Frame_Del": 1,
+      "Frame_Shift_Ins": 1
+     },
+     "top_changes": [
+      [
+       "Q347*",
+       2
+      ],
+      [
+       "W571*",
+       1
+      ],
+      [
+       "R366*",
+       1
+      ],
+      [
+       "E524Q",
+       1
+      ],
+      [
+       "V54F",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.2,
+     "types": {
+      "Frame_Shift_Ins": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "T137Hfs*5",
+       1
+      ],
+      [
+       "T79Pfs*40",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 22,
+     "mutated_samples": 17,
+     "freq_pct": 1.73,
+     "types": {
+      "Missense_Mutation": 18,
+      "Frame_Shift_Del": 2,
+      "Nonsense_Mutation": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "D139Mfs*14",
+       1
+      ],
+      [
+       "R2028P",
+       1
+      ],
+      [
+       "D896H",
+       1
+      ],
+      [
+       "R840Nfs*8",
+       1
+      ],
+      [
+       "D1247H",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 13,
+     "mutated_samples": 13,
+     "freq_pct": 1.32,
+     "types": {
+      "Missense_Mutation": 8,
+      "Nonsense_Mutation": 2,
+      "In_Frame_Del": 1,
+      "Splice_Site": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "E9Q",
+       1
+      ],
+      [
+       "E720*",
+       1
+      ],
+      [
+       "K50T",
+       1
+      ],
+      [
+       "G1788V",
+       1
+      ],
+      [
+       "C644del",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 17,
+     "mutated_samples": 15,
+     "freq_pct": 1.53,
+     "types": {
+      "Missense_Mutation": 13,
+      "Nonsense_Mutation": 1,
+      "In_Frame_Del": 1,
+      "Splice_Site": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "L2926*",
+       1
+      ],
+      [
+       "Y3049S",
+       1
+      ],
+      [
+       "D1355Y",
+       1
+      ],
+      [
+       "V1270del",
+       1
+      ],
+      [
+       "X2602_splice",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 7,
+     "mutated_samples": 7,
+     "freq_pct": 0.71,
+     "types": {
+      "Missense_Mutation": 3,
+      "Frame_Shift_Del": 2,
+      "Nonsense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "L109R",
+       1
+      ],
+      [
+       "N316Ifs*20",
+       1
+      ],
+      [
+       "G231Afs*10",
+       1
+      ],
+      [
+       "H132Y",
+       1
+      ],
+      [
+       "R361H",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 29,
+     "mutated_samples": 28,
+     "freq_pct": 2.85,
+     "types": {
+      "Missense_Mutation": 11,
+      "Nonsense_Mutation": 10,
+      "Frame_Shift_Del": 5,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "Q528*",
+       3
+      ],
+      [
+       "R2143C",
+       1
+      ],
+      [
+       "Q479*",
+       1
+      ],
+      [
+       "S536P",
+       1
+      ],
+      [
+       "Q944*",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "luad_tcga": {
+   "name": "Lung Adenocarcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 230,
+   "all_samples": 586,
+   "genes": {
+    "TP53": {
+     "mutations": 115,
+     "mutated_samples": 106,
+     "freq_pct": 46.09,
+     "types": {
+      "Missense_Mutation": 73,
+      "Nonsense_Mutation": 21,
+      "Frame_Shift_Del": 11,
+      "Splice_Site": 5,
+      "Splice_Region": 3,
+      "Frame_Shift_Ins": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R175H",
+       3
+      ],
+      [
+       "T125=",
+       3
+      ],
+      [
+       "A159P",
+       3
+      ],
+      [
+       "V73Wfs*50",
+       3
+      ],
+      [
+       "R158L",
+       3
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 45,
+     "mutated_samples": 33,
+     "freq_pct": 14.35,
+     "types": {
+      "Missense_Mutation": 30,
+      "In_Frame_Del": 12,
+      "In_Frame_Ins": 1,
+      "Nonsense_Mutation": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "L858R",
+       8
+      ],
+      [
+       "E746_A750del",
+       6
+      ],
+      [
+       "L861Q",
+       3
+      ],
+      [
+       "S768I",
+       2
+      ],
+      [
+       "E709_T710delinsD",
+       2
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 1.3,
+     "types": {
+      "Missense_Mutation": 3
+     },
+     "top_changes": [
+      [
+       "R132L",
+       1
+      ],
+      [
+       "R109K",
+       1
+      ],
+      [
+       "D375Y",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 76,
+     "mutated_samples": 75,
+     "freq_pct": 32.61,
+     "types": {
+      "Missense_Mutation": 75,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "G12C",
+       36
+      ],
+      [
+       "G12V",
+       20
+      ],
+      [
+       "G12A",
+       6
+      ],
+      [
+       "G12D",
+       5
+      ],
+      [
+       "G12S",
+       2
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 15,
+     "mutated_samples": 15,
+     "freq_pct": 6.52,
+     "types": {
+      "Missense_Mutation": 15
+     },
+     "top_changes": [
+      [
+       "E545K",
+       5
+      ],
+      [
+       "E542K",
+       3
+      ],
+      [
+       "H1047R",
+       1
+      ],
+      [
+       "E600K",
+       1
+      ],
+      [
+       "R87T",
+       1
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 23,
+     "mutated_samples": 22,
+     "freq_pct": 9.57,
+     "types": {
+      "Missense_Mutation": 20,
+      "Splice_Site": 2,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "V600E",
+       5
+      ],
+      [
+       "G469V",
+       3
+      ],
+      [
+       "G466V",
+       2
+      ],
+      [
+       "N581S",
+       2
+      ],
+      [
+       "A762E",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 1.3,
+     "types": {
+      "Missense_Mutation": 2,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "M35I",
+       1
+      ],
+      [
+       "H123Y",
+       1
+      ],
+      [
+       "G36*",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 9,
+     "mutated_samples": 9,
+     "freq_pct": 3.91,
+     "types": {
+      "Missense_Mutation": 5,
+      "Frame_Shift_Ins": 1,
+      "Nonsense_Mutation": 1,
+      "Frame_Shift_Del": 1,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "D1562N",
+       1
+      ],
+      [
+       "S1415Kfs*8",
+       1
+      ],
+      [
+       "A2313S",
+       1
+      ],
+      [
+       "Q2291*",
+       1
+      ],
+      [
+       "G2227Qfs*12",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 31,
+     "mutated_samples": 27,
+     "freq_pct": 11.74,
+     "types": {
+      "Missense_Mutation": 11,
+      "Frame_Shift_Del": 8,
+      "Nonsense_Mutation": 7,
+      "Splice_Site": 3,
+      "Frame_Shift_Ins": 1,
+      "Splice_Region": 1
+     },
+     "top_changes": [
+      [
+       "E2357*",
+       1
+      ],
+      [
+       "Q1815L",
+       1
+      ],
+      [
+       "F1275Pfs*8",
+       1
+      ],
+      [
+       "G1668V",
+       1
+      ],
+      [
+       "X1938_splice",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 10,
+     "mutated_samples": 10,
+     "freq_pct": 4.35,
+     "types": {
+      "Missense_Mutation": 6,
+      "Frame_Shift_Ins": 2,
+      "Splice_Site": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "X51_splice",
+       1
+      ],
+      [
+       "H83Y",
+       1
+      ],
+      [
+       "P167S",
+       1
+      ],
+      [
+       "L94P",
+       1
+      ],
+      [
+       "D84N",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 15,
+     "mutated_samples": 15,
+     "freq_pct": 6.52,
+     "types": {
+      "Missense_Mutation": 11,
+      "Nonsense_Mutation": 4
+     },
+     "top_changes": [
+      [
+       "R81M",
+       1
+      ],
+      [
+       "N1753D",
+       1
+      ],
+      [
+       "S677*",
+       1
+      ],
+      [
+       "G1945E",
+       1
+      ],
+      [
+       "E1223Q",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 7,
+     "mutated_samples": 7,
+     "freq_pct": 3.04,
+     "types": {
+      "Missense_Mutation": 7
+     },
+     "top_changes": [
+      [
+       "V412L",
+       1
+      ],
+      [
+       "G1350A",
+       1
+      ],
+      [
+       "E1000Q",
+       1
+      ],
+      [
+       "K175N",
+       1
+      ],
+      [
+       "T1548M",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 11,
+     "mutated_samples": 11,
+     "freq_pct": 4.78,
+     "types": {
+      "Missense_Mutation": 9,
+      "Nonsense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "I2718V",
+       1
+      ],
+      [
+       "S3376*",
+       1
+      ],
+      [
+       "P2608S",
+       1
+      ],
+      [
+       "R1512H",
+       1
+      ],
+      [
+       "E3403Q",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 8,
+     "mutated_samples": 8,
+     "freq_pct": 3.48,
+     "types": {
+      "Missense_Mutation": 5,
+      "Nonsense_Mutation": 2,
+      "Splice_Region": 1
+     },
+     "top_changes": [
+      [
+       "D493N",
+       1
+      ],
+      [
+       "S242*",
+       1
+      ],
+      [
+       "S144*",
+       1
+      ],
+      [
+       "R361H",
+       1
+      ],
+      [
+       "R100W",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 17,
+     "mutated_samples": 16,
+     "freq_pct": 6.96,
+     "types": {
+      "Nonsense_Mutation": 9,
+      "Missense_Mutation": 7,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "E1760*",
+       1
+      ],
+      [
+       "Q435*",
+       1
+      ],
+      [
+       "Q754*",
+       1
+      ],
+      [
+       "Q1357L",
+       1
+      ],
+      [
+       "E2032K",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "coadread_tcga": {
+   "name": "Colorectal Adenocarcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 223,
+   "all_samples": 640,
+   "genes": {
+    "TP53": {
+     "mutations": 122,
+     "mutated_samples": 120,
+     "freq_pct": 53.81,
+     "types": {
+      "Missense_Mutation": 83,
+      "Nonsense_Mutation": 21,
+      "Frame_Shift_Del": 10,
+      "Frame_Shift_Ins": 6,
+      "Splice_Region": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R175H",
+       14
+      ],
+      [
+       "R248W",
+       8
+      ],
+      [
+       "R213*",
+       7
+      ],
+      [
+       "R273H",
+       7
+      ],
+      [
+       "G245S",
+       4
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 11,
+     "mutated_samples": 10,
+     "freq_pct": 4.48,
+     "types": {
+      "Missense_Mutation": 11
+     },
+     "top_changes": [
+      [
+       "N842H",
+       1
+      ],
+      [
+       "S768T",
+       1
+      ],
+      [
+       "P596L",
+       1
+      ],
+      [
+       "R222C",
+       1
+      ],
+      [
+       "R831H",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 1.35,
+     "types": {
+      "Missense_Mutation": 3
+     },
+     "top_changes": [
+      [
+       "R132C",
+       1
+      ],
+      [
+       "M182L",
+       1
+      ],
+      [
+       "P33S",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 96,
+     "mutated_samples": 96,
+     "freq_pct": 43.05,
+     "types": {
+      "Missense_Mutation": 95,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "G12D",
+       31
+      ],
+      [
+       "G12V",
+       23
+      ],
+      [
+       "G13D",
+       10
+      ],
+      [
+       "A146T",
+       8
+      ],
+      [
+       "G12C",
+       6
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 40,
+     "mutated_samples": 33,
+     "freq_pct": 14.8,
+     "types": {
+      "Missense_Mutation": 40
+     },
+     "top_changes": [
+      [
+       "E545K",
+       8
+      ],
+      [
+       "H1047R",
+       5
+      ],
+      [
+       "R88Q",
+       4
+      ],
+      [
+       "E542K",
+       2
+      ],
+      [
+       "N345K",
+       2
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 23,
+     "mutated_samples": 22,
+     "freq_pct": 9.87,
+     "types": {
+      "Missense_Mutation": 23
+     },
+     "top_changes": [
+      [
+       "V600E",
+       20
+      ],
+      [
+       "E228V",
+       1
+      ],
+      [
+       "K205Q",
+       1
+      ],
+      [
+       "F247L",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 11,
+     "mutated_samples": 7,
+     "freq_pct": 3.14,
+     "types": {
+      "Missense_Mutation": 6,
+      "Nonsense_Mutation": 4,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "R130Q",
+       3
+      ],
+      [
+       "A126Lfs*8",
+       1
+      ],
+      [
+       "R130*",
+       1
+      ],
+      [
+       "R233*",
+       1
+      ],
+      [
+       "E299*",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 241,
+     "mutated_samples": 160,
+     "freq_pct": 71.75,
+     "types": {
+      "Nonsense_Mutation": 166,
+      "Missense_Mutation": 32,
+      "Frame_Shift_Del": 31,
+      "Frame_Shift_Ins": 11,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "R1450*",
+       19
+      ],
+      [
+       "R876*",
+       11
+      ],
+      [
+       "R216*",
+       7
+      ],
+      [
+       "R805*",
+       6
+      ],
+      [
+       "R564*",
+       6
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 11,
+     "mutated_samples": 8,
+     "freq_pct": 3.59,
+     "types": {
+      "Missense_Mutation": 7,
+      "Nonsense_Mutation": 4
+     },
+     "top_changes": [
+      [
+       "R2450*",
+       1
+      ],
+      [
+       "E524*",
+       1
+      ],
+      [
+       "R1276Q",
+       1
+      ],
+      [
+       "F2544V",
+       1
+      ],
+      [
+       "K1379T",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 0,
+     "mutated_samples": 0,
+     "freq_pct": 0.0,
+     "types": {},
+     "top_changes": []
+    },
+    "ATRX": {
+     "mutations": 8,
+     "mutated_samples": 5,
+     "freq_pct": 2.24,
+     "types": {
+      "Missense_Mutation": 8
+     },
+     "top_changes": [
+      [
+       "A771V",
+       1
+      ],
+      [
+       "A2137T",
+       1
+      ],
+      [
+       "L1612I",
+       1
+      ],
+      [
+       "K987N",
+       1
+      ],
+      [
+       "K1583N",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 6,
+     "mutated_samples": 6,
+     "freq_pct": 2.69,
+     "types": {
+      "Missense_Mutation": 5,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "E489G",
+       1
+      ],
+      [
+       "E907K",
+       1
+      ],
+      [
+       "S1503*",
+       1
+      ],
+      [
+       "R170Q",
+       1
+      ],
+      [
+       "D821Y",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 22,
+     "mutated_samples": 10,
+     "freq_pct": 4.48,
+     "types": {
+      "Missense_Mutation": 19,
+      "Nonsense_Mutation": 2,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "R3052W",
+       1
+      ],
+      [
+       "F2568C",
+       1
+      ],
+      [
+       "S1650Vfs*20",
+       1
+      ],
+      [
+       "E832G",
+       1
+      ],
+      [
+       "I332M",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 30,
+     "mutated_samples": 26,
+     "freq_pct": 11.66,
+     "types": {
+      "Missense_Mutation": 25,
+      "Nonsense_Mutation": 3,
+      "Frame_Shift_Del": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R361H",
+       7
+      ],
+      [
+       "D355G",
+       1
+      ],
+      [
+       "R97H",
+       1
+      ],
+      [
+       "S357P",
+       1
+      ],
+      [
+       "G510R",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 22,
+     "mutated_samples": 21,
+     "freq_pct": 9.42,
+     "types": {
+      "Nonsense_Mutation": 10,
+      "Missense_Mutation": 9,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R1722*",
+       2
+      ],
+      [
+       "R1989*",
+       2
+      ],
+      [
+       "Q761Pfs*56",
+       1
+      ],
+      [
+       "G922D",
+       1
+      ],
+      [
+       "R1262H",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "paad_tcga": {
+   "name": "Pancreatic Adenocarcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 150,
+   "all_samples": 186,
+   "genes": {
+    "TP53": {
+     "mutations": 105,
+     "mutated_samples": 104,
+     "freq_pct": 69.33,
+     "types": {
+      "Missense_Mutation": 72,
+      "Nonsense_Mutation": 17,
+      "Frame_Shift_Del": 7,
+      "Frame_Shift_Ins": 4,
+      "Splice_Site": 4,
+      "In_Frame_Ins": 1
+     },
+     "top_changes": [
+      [
+       "R175H",
+       5
+      ],
+      [
+       "R248W",
+       5
+      ],
+      [
+       "R282W",
+       3
+      ],
+      [
+       "G245S",
+       3
+      ],
+      [
+       "R273C",
+       3
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 3,
+     "mutated_samples": 1,
+     "freq_pct": 0.67,
+     "types": {
+      "Missense_Mutation": 2,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "D800G",
+       1
+      ],
+      [
+       "L683M",
+       1
+      ],
+      [
+       "R669*",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.67,
+     "types": {
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "R49C",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 140,
+     "mutated_samples": 136,
+     "freq_pct": 90.67,
+     "types": {
+      "Missense_Mutation": 140
+     },
+     "top_changes": [
+      [
+       "G12D",
+       61
+      ],
+      [
+       "G12V",
+       40
+      ],
+      [
+       "G12R",
+       27
+      ],
+      [
+       "Q61H",
+       6
+      ],
+      [
+       "Q61R",
+       2
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 4,
+     "mutated_samples": 4,
+     "freq_pct": 2.67,
+     "types": {
+      "Missense_Mutation": 4
+     },
+     "top_changes": [
+      [
+       "P539R",
+       1
+      ],
+      [
+       "R979G",
+       1
+      ],
+      [
+       "M1010T",
+       1
+      ],
+      [
+       "M1043L",
+       1
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 2.0,
+     "types": {
+      "In_Frame_Del": 2,
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "R462T",
+       1
+      ],
+      [
+       "N486_P490del",
+       1
+      ],
+      [
+       "T488_Q493delinsK",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 0,
+     "mutated_samples": 0,
+     "freq_pct": 0.0,
+     "types": {},
+     "top_changes": []
+    },
+    "APC": {
+     "mutations": 7,
+     "mutated_samples": 4,
+     "freq_pct": 2.67,
+     "types": {
+      "Missense_Mutation": 7
+     },
+     "top_changes": [
+      [
+       "D1825G",
+       1
+      ],
+      [
+       "S1252Y",
+       1
+      ],
+      [
+       "A597T",
+       1
+      ],
+      [
+       "R374W",
+       1
+      ],
+      [
+       "Y158H",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 4,
+     "mutated_samples": 3,
+     "freq_pct": 2.0,
+     "types": {
+      "Nonsense_Mutation": 2,
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "Q1070*",
+       1
+      ],
+      [
+       "R1958C",
+       1
+      ],
+      [
+       "T1972A",
+       1
+      ],
+      [
+       "Q1617*",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 22,
+     "mutated_samples": 22,
+     "freq_pct": 14.67,
+     "types": {
+      "Nonsense_Mutation": 10,
+      "Missense_Mutation": 6,
+      "Frame_Shift_Del": 3,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R80*",
+       6
+      ],
+      [
+       "H83Y",
+       4
+      ],
+      [
+       "R58*",
+       2
+      ],
+      [
+       "E120*",
+       1
+      ],
+      [
+       "L97_H98del",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.67,
+     "types": {
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "S598F",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 3,
+     "mutated_samples": 2,
+     "freq_pct": 1.33,
+     "types": {
+      "Missense_Mutation": 3
+     },
+     "top_changes": [
+      [
+       "A314T",
+       1
+      ],
+      [
+       "V1590A",
+       1
+      ],
+      [
+       "S646G",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 6,
+     "mutated_samples": 2,
+     "freq_pct": 1.33,
+     "types": {
+      "Missense_Mutation": 5,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "V2716Wfs*17",
+       1
+      ],
+      [
+       "I1017F",
+       1
+      ],
+      [
+       "T1346N",
+       1
+      ],
+      [
+       "N1642T",
+       1
+      ],
+      [
+       "V2079M",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 38,
+     "mutated_samples": 37,
+     "freq_pct": 24.67,
+     "types": {
+      "Missense_Mutation": 16,
+      "Nonsense_Mutation": 11,
+      "Frame_Shift_Del": 8,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "R361C",
+       3
+      ],
+      [
+       "E520*",
+       2
+      ],
+      [
+       "G352*",
+       2
+      ],
+      [
+       "S227Vfs*14",
+       1
+      ],
+      [
+       "Q289*",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 12,
+     "mutated_samples": 8,
+     "freq_pct": 5.33,
+     "types": {
+      "Nonsense_Mutation": 6,
+      "Missense_Mutation": 3,
+      "Frame_Shift_Del": 2,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "E1542*",
+       1
+      ],
+      [
+       "R1276*",
+       1
+      ],
+      [
+       "X1239_splice",
+       1
+      ],
+      [
+       "Q1947*",
+       1
+      ],
+      [
+       "Q594Sfs*25",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "ov_tcga": {
+   "name": "Ovarian Serous Cystadenocarcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 316,
+   "all_samples": 617,
+   "genes": {
+    "TP53": {
+     "mutations": 280,
+     "mutated_samples": 277,
+     "freq_pct": 87.66,
+     "types": {
+      "Missense_Mutation": 179,
+      "Splice_Site": 33,
+      "Nonsense_Mutation": 27,
+      "Frame_Shift_Del": 23,
+      "Frame_Shift_Ins": 9,
+      "In_Frame_Del": 5,
+      "Splice_Region": 3,
+      "In_Frame_Ins": 1
+     },
+     "top_changes": [
+      [
+       "R273H",
+       10
+      ],
+      [
+       "X187_splice",
+       8
+      ],
+      [
+       "R248Q",
+       8
+      ],
+      [
+       "Y220C",
+       8
+      ],
+      [
+       "R175H",
+       8
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 7,
+     "mutated_samples": 7,
+     "freq_pct": 2.22,
+     "types": {
+      "Missense_Mutation": 6,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "A839V",
+       1
+      ],
+      [
+       "E709Q",
+       1
+      ],
+      [
+       "P772R",
+       1
+      ],
+      [
+       "S380Pfs*16",
+       1
+      ],
+      [
+       "Q1164R",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 0,
+     "mutated_samples": 0,
+     "freq_pct": 0.0,
+     "types": {},
+     "top_changes": []
+    },
+    "KRAS": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.63,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "G12V",
+       2
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.63,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "E545K",
+       1
+      ],
+      [
+       "H1047R",
+       1
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.63,
+     "types": {
+      "Nonsense_Mutation": 1,
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "S637*",
+       1
+      ],
+      [
+       "N581S",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.63,
+     "types": {
+      "Missense_Mutation": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "V175L",
+       1
+      ],
+      [
+       "R233Dfs*23",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 8,
+     "mutated_samples": 7,
+     "freq_pct": 2.22,
+     "types": {
+      "Missense_Mutation": 7,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "E1286G",
+       1
+      ],
+      [
+       "W593L",
+       1
+      ],
+      [
+       "L852S",
+       1
+      ],
+      [
+       "G1120E",
+       1
+      ],
+      [
+       "S2005*",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 15,
+     "mutated_samples": 14,
+     "freq_pct": 4.43,
+     "types": {
+      "Missense_Mutation": 6,
+      "Nonsense_Mutation": 4,
+      "Frame_Shift_Del": 3,
+      "Splice_Site": 1,
+      "Frame_Shift_Ins": 1
+     },
+     "top_changes": [
+      [
+       "K1444E",
+       1
+      ],
+      [
+       "Q112*",
+       1
+      ],
+      [
+       "L550P",
+       1
+      ],
+      [
+       "L194P",
+       1
+      ],
+      [
+       "G1863A",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 0,
+     "mutated_samples": 0,
+     "freq_pct": 0.0,
+     "types": {},
+     "top_changes": []
+    },
+    "ATRX": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.63,
+     "types": {
+      "Frame_Shift_Del": 1,
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "S1326Qfs*20",
+       1
+      ],
+      [
+       "N2290S",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 12,
+     "mutated_samples": 12,
+     "freq_pct": 3.8,
+     "types": {
+      "Frame_Shift_Del": 5,
+      "Nonsense_Mutation": 4,
+      "Frame_Shift_Ins": 2,
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "Q1538*",
+       1
+      ],
+      [
+       "R1835*",
+       1
+      ],
+      [
+       "C47W",
+       1
+      ],
+      [
+       "C24Sfs*16",
+       1
+      ],
+      [
+       "N1265Kfs*4",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 12,
+     "mutated_samples": 11,
+     "freq_pct": 3.48,
+     "types": {
+      "Frame_Shift_Del": 6,
+      "Nonsense_Mutation": 4,
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "C711*",
+       1
+      ],
+      [
+       "S1882*",
+       1
+      ],
+      [
+       "R2394*",
+       1
+      ],
+      [
+       "K1406Nfs*3",
+       1
+      ],
+      [
+       "E1407Vfs*5",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 0,
+     "mutated_samples": 0,
+     "freq_pct": 0.0,
+     "types": {},
+     "top_changes": []
+    },
+    "ARID1A": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 0.95,
+     "types": {
+      "Nonsense_Mutation": 2,
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "G856V",
+       1
+      ],
+      [
+       "S664*",
+       1
+      ],
+      [
+       "Q1708*",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "lusc_tcga": {
+   "name": "Lung Squamous Cell Carcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 178,
+   "all_samples": 511,
+   "genes": {
+    "TP53": {
+     "mutations": 152,
+     "mutated_samples": 145,
+     "freq_pct": 81.46,
+     "types": {
+      "Missense_Mutation": 100,
+      "Nonsense_Mutation": 20,
+      "Frame_Shift_Del": 12,
+      "Splice_Site": 10,
+      "Splice_Region": 5,
+      "In_Frame_Del": 2,
+      "Frame_Shift_Ins": 2,
+      "In_Frame_Ins": 1
+     },
+     "top_changes": [
+      [
+       "R158L",
+       5
+      ],
+      [
+       "C242F",
+       3
+      ],
+      [
+       "E298*",
+       3
+      ],
+      [
+       "R273L",
+       3
+      ],
+      [
+       "T125=",
+       3
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 7,
+     "mutated_samples": 6,
+     "freq_pct": 3.37,
+     "types": {
+      "Missense_Mutation": 6,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "L861Q",
+       2
+      ],
+      [
+       "P1019L",
+       1
+      ],
+      [
+       "P589L",
+       1
+      ],
+      [
+       "X210_splice",
+       1
+      ],
+      [
+       "S720C",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 1.12,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "G221V",
+       1
+      ],
+      [
+       "L359F",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 1.12,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "C118S",
+       1
+      ],
+      [
+       "Q61H",
+       1
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 29,
+     "mutated_samples": 27,
+     "freq_pct": 15.17,
+     "types": {
+      "Missense_Mutation": 29
+     },
+     "top_changes": [
+      [
+       "E545K",
+       10
+      ],
+      [
+       "E542K",
+       3
+      ],
+      [
+       "E726K",
+       2
+      ],
+      [
+       "H1047R",
+       2
+      ],
+      [
+       "C420R",
+       1
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 8,
+     "mutated_samples": 8,
+     "freq_pct": 4.49,
+     "types": {
+      "Missense_Mutation": 7,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "G469R",
+       1
+      ],
+      [
+       "G466V",
+       1
+      ],
+      [
+       "D380H",
+       1
+      ],
+      [
+       "X621_splice",
+       1
+      ],
+      [
+       "R95T",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 16,
+     "mutated_samples": 14,
+     "freq_pct": 7.87,
+     "types": {
+      "Missense_Mutation": 8,
+      "Nonsense_Mutation": 6,
+      "Frame_Shift_Del": 2
+     },
+     "top_changes": [
+      [
+       "Q245*",
+       2
+      ],
+      [
+       "K128Q",
+       1
+      ],
+      [
+       "E235*",
+       1
+      ],
+      [
+       "A328Qfs*16",
+       1
+      ],
+      [
+       "L320*",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 9,
+     "mutated_samples": 8,
+     "freq_pct": 4.49,
+     "types": {
+      "Missense_Mutation": 7,
+      "Nonsense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "L1393I",
+       1
+      ],
+      [
+       "S320*",
+       1
+      ],
+      [
+       "P1381S",
+       1
+      ],
+      [
+       "S966G",
+       1
+      ],
+      [
+       "Q2403H",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 22,
+     "mutated_samples": 21,
+     "freq_pct": 11.8,
+     "types": {
+      "Missense_Mutation": 15,
+      "Nonsense_Mutation": 5,
+      "Splice_Site": 2
+     },
+     "top_changes": [
+      [
+       "D2632V",
+       1
+      ],
+      [
+       "Q181H",
+       1
+      ],
+      [
+       "M1981V",
+       1
+      ],
+      [
+       "C904*",
+       1
+      ],
+      [
+       "S82C",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 27,
+     "mutated_samples": 27,
+     "freq_pct": 15.17,
+     "types": {
+      "Missense_Mutation": 15,
+      "Nonsense_Mutation": 9,
+      "Frame_Shift_Del": 3
+     },
+     "top_changes": [
+      [
+       "D108Y",
+       3
+      ],
+      [
+       "W110*",
+       2
+      ],
+      [
+       "V115Wfs*31",
+       1
+      ],
+      [
+       "D108G",
+       1
+      ],
+      [
+       "E119*",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 14,
+     "mutated_samples": 12,
+     "freq_pct": 6.74,
+     "types": {
+      "Missense_Mutation": 12,
+      "Splice_Region": 1,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "L1612V",
+       1
+      ],
+      [
+       "K686N",
+       1
+      ],
+      [
+       "A1064T",
+       1
+      ],
+      [
+       "E1315=",
+       1
+      ],
+      [
+       "G1964A",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 12,
+     "mutated_samples": 10,
+     "freq_pct": 5.62,
+     "types": {
+      "Missense_Mutation": 9,
+      "Nonsense_Mutation": 2,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "V525A",
+       1
+      ],
+      [
+       "Q94*",
+       1
+      ],
+      [
+       "R320T",
+       1
+      ],
+      [
+       "V1665L",
+       1
+      ],
+      [
+       "D1344N",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 12,
+     "mutated_samples": 11,
+     "freq_pct": 6.18,
+     "types": {
+      "Missense_Mutation": 9,
+      "Nonsense_Mutation": 2,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "S2201F",
+       1
+      ],
+      [
+       "X2659_splice",
+       1
+      ],
+      [
+       "V2820I",
+       1
+      ],
+      [
+       "S2098T",
+       1
+      ],
+      [
+       "Q499*",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 5,
+     "mutated_samples": 5,
+     "freq_pct": 2.81,
+     "types": {
+      "Nonsense_Mutation": 3,
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "D537E",
+       1
+      ],
+      [
+       "E526*",
+       1
+      ],
+      [
+       "Q289*",
+       1
+      ],
+      [
+       "S204Y",
+       1
+      ],
+      [
+       "Q183*",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 15,
+     "mutated_samples": 13,
+     "freq_pct": 7.3,
+     "types": {
+      "Missense_Mutation": 8,
+      "Frame_Shift_Del": 3,
+      "Frame_Shift_Ins": 1,
+      "Nonsense_Mutation": 1,
+      "Splice_Region": 1,
+      "Splice_Site": 1
+     },
+     "top_changes": [
+      [
+       "P431Q",
+       1
+      ],
+      [
+       "S2104F",
+       1
+      ],
+      [
+       "Q449Hfs*171",
+       1
+      ],
+      [
+       "L1049V",
+       1
+      ],
+      [
+       "Q2070H",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "prad_tcga": {
+   "name": "Prostate Adenocarcinoma (TCGA, Firehose Legacy)",
+   "sequenced": 499,
+   "all_samples": 501,
+   "genes": {
+    "TP53": {
+     "mutations": 64,
+     "mutated_samples": 61,
+     "freq_pct": 12.22,
+     "types": {
+      "Missense_Mutation": 46,
+      "Frame_Shift_Del": 8,
+      "Splice_Site": 6,
+      "Frame_Shift_Ins": 2,
+      "Nonsense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "G245S",
+       4
+      ],
+      [
+       "R248Q",
+       4
+      ],
+      [
+       "Y163H",
+       3
+      ],
+      [
+       "X126_splice",
+       3
+      ],
+      [
+       "G245D",
+       3
+      ]
+     ]
+    },
+    "EGFR": {
+     "mutations": 3,
+     "mutated_samples": 3,
+     "freq_pct": 0.6,
+     "types": {
+      "Missense_Mutation": 3
+     },
+     "top_changes": [
+      [
+       "G1185V",
+       1
+      ],
+      [
+       "G312W",
+       1
+      ],
+      [
+       "F997V",
+       1
+      ]
+     ]
+    },
+    "IDH1": {
+     "mutations": 6,
+     "mutated_samples": 6,
+     "freq_pct": 1.2,
+     "types": {
+      "Missense_Mutation": 6
+     },
+     "top_changes": [
+      [
+       "R132H",
+       2
+      ],
+      [
+       "R132C",
+       2
+      ],
+      [
+       "R132G",
+       1
+      ],
+      [
+       "E306D",
+       1
+      ]
+     ]
+    },
+    "KRAS": {
+     "mutations": 2,
+     "mutated_samples": 2,
+     "freq_pct": 0.4,
+     "types": {
+      "Missense_Mutation": 2
+     },
+     "top_changes": [
+      [
+       "G12R",
+       1
+      ],
+      [
+       "G12D",
+       1
+      ]
+     ]
+    },
+    "PIK3CA": {
+     "mutations": 16,
+     "mutated_samples": 14,
+     "freq_pct": 2.81,
+     "types": {
+      "Missense_Mutation": 16
+     },
+     "top_changes": [
+      [
+       "E542K",
+       3
+      ],
+      [
+       "H1047R",
+       2
+      ],
+      [
+       "C420R",
+       1
+      ],
+      [
+       "E545K",
+       1
+      ],
+      [
+       "R88Q",
+       1
+      ]
+     ]
+    },
+    "BRAF": {
+     "mutations": 8,
+     "mutated_samples": 8,
+     "freq_pct": 1.6,
+     "types": {
+      "Missense_Mutation": 7,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "G469A",
+       2
+      ],
+      [
+       "G258V",
+       1
+      ],
+      [
+       "K601_W604del",
+       1
+      ],
+      [
+       "L597R",
+       1
+      ],
+      [
+       "T401A",
+       1
+      ]
+     ]
+    },
+    "PTEN": {
+     "mutations": 17,
+     "mutated_samples": 17,
+     "freq_pct": 3.41,
+     "types": {
+      "Missense_Mutation": 5,
+      "Frame_Shift_Ins": 5,
+      "Frame_Shift_Del": 4,
+      "Splice_Site": 1,
+      "In_Frame_Del": 1,
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "T319Ffs*5",
+       1
+      ],
+      [
+       "V119F",
+       1
+      ],
+      [
+       "D326G",
+       1
+      ],
+      [
+       "X70_splice",
+       1
+      ],
+      [
+       "N323Kfs*2",
+       1
+      ]
+     ]
+    },
+    "APC": {
+     "mutations": 10,
+     "mutated_samples": 10,
+     "freq_pct": 2.0,
+     "types": {
+      "Nonsense_Mutation": 6,
+      "Missense_Mutation": 2,
+      "Frame_Shift_Ins": 1,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "S1539*",
+       1
+      ],
+      [
+       "Q1123*",
+       1
+      ],
+      [
+       "T1438Nfs*17",
+       1
+      ],
+      [
+       "R2714H",
+       1
+      ],
+      [
+       "A1553V",
+       1
+      ]
+     ]
+    },
+    "NF1": {
+     "mutations": 5,
+     "mutated_samples": 5,
+     "freq_pct": 1.0,
+     "types": {
+      "Missense_Mutation": 3,
+      "Frame_Shift_Del": 2
+     },
+     "top_changes": [
+      [
+       "F150Sfs*15",
+       2
+      ],
+      [
+       "H415Y",
+       1
+      ],
+      [
+       "R2713W",
+       1
+      ],
+      [
+       "K2044E",
+       1
+      ]
+     ]
+    },
+    "CDKN2A": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.2,
+     "types": {
+      "Nonsense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "R80*",
+       1
+      ]
+     ]
+    },
+    "ATRX": {
+     "mutations": 5,
+     "mutated_samples": 5,
+     "freq_pct": 1.0,
+     "types": {
+      "Missense_Mutation": 4,
+      "Frame_Shift_Del": 1
+     },
+     "top_changes": [
+      [
+       "C220W",
+       1
+      ],
+      [
+       "M1556T",
+       1
+      ],
+      [
+       "I2050S",
+       1
+      ],
+      [
+       "S598Rfs*3",
+       1
+      ],
+      [
+       "M1920I",
+       1
+      ]
+     ]
+    },
+    "BRCA1": {
+     "mutations": 1,
+     "mutated_samples": 1,
+     "freq_pct": 0.2,
+     "types": {
+      "Missense_Mutation": 1
+     },
+     "top_changes": [
+      [
+       "E181D",
+       1
+      ]
+     ]
+    },
+    "BRCA2": {
+     "mutations": 9,
+     "mutated_samples": 9,
+     "freq_pct": 1.8,
+     "types": {
+      "Missense_Mutation": 4,
+      "Frame_Shift_Del": 3,
+      "Frame_Shift_Ins": 2
+     },
+     "top_changes": [
+      [
+       "N433Tfs*27",
+       1
+      ],
+      [
+       "N1435T",
+       1
+      ],
+      [
+       "V726Sfs*25",
+       1
+      ],
+      [
+       "S3364Ifs*4",
+       1
+      ],
+      [
+       "D281H",
+       1
+      ]
+     ]
+    },
+    "SMAD4": {
+     "mutations": 7,
+     "mutated_samples": 5,
+     "freq_pct": 1.0,
+     "types": {
+      "Missense_Mutation": 7
+     },
+     "top_changes": [
+      [
+       "S504R",
+       1
+      ],
+      [
+       "Y353N",
+       1
+      ],
+      [
+       "D351Y",
+       1
+      ],
+      [
+       "D355V",
+       1
+      ],
+      [
+       "D493N",
+       1
+      ]
+     ]
+    },
+    "ARID1A": {
+     "mutations": 8,
+     "mutated_samples": 8,
+     "freq_pct": 1.6,
+     "types": {
+      "Missense_Mutation": 4,
+      "In_Frame_Ins": 2,
+      "Nonsense_Mutation": 1,
+      "In_Frame_Del": 1
+     },
+     "top_changes": [
+      [
+       "Q708*",
+       1
+      ],
+      [
+       "A167dup",
+       1
+      ],
+      [
+       "G191del",
+       1
+      ],
+      [
+       "P1756R",
+       1
+      ],
+      [
+       "R1551H",
+       1
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "errors": []
+}
