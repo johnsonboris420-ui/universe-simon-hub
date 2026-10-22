@@ -20,6 +20,10 @@ export function mountHosting(app: Express) {
   }
   const dir = process.env.STATIC_DIR;
   if (dir && fs.existsSync(dir)) {
+    for (const sub of ["frameless", "gallery"]) {
+      app.use(`/${sub}`, express.static(path.join(dir, sub), { index: "index.html" }));
+      app.get(new RegExp(`^/${sub}(/.*)?$`), (_req, res) => res.sendFile(path.join(dir, sub, "index.html")));
+    }
     app.use(express.static(dir, { index: false }));
     app.get(/^(?!\/api|\/learnchain).*/, (_req, res) => res.sendFile(path.join(dir, "index.html")));
   }
