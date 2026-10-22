@@ -151,6 +151,7 @@ export function startBackgroundMiner(intervalMs = 30_000) {
 }
 
 router.post("/mining/mine", async (req, res) => {
+  if (process.env.ALLOW_MANUAL_MINE !== "true") { res.status(403).json({ error: "Manual mining disabled on this server (simulation runs automatically)" }); return; }
   try {
     const result = await mineBlock();
     res.json(result);

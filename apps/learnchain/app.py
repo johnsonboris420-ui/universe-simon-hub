@@ -9,6 +9,28 @@ app.secret_key = os.urandom(16)        # only for flash messages
 chain = Blockchain(difficulty=3)
 wallets: dict[str, Wallet] = {}         # demo only: keys kept in memory so the UI can sign for you
 
+# Public-demo guards: cap memory/CPU so anonymous visitors can't exhaust the shared server.
+MAX_WALLETS = int(os.environ.get("LC_MAX_WALLETS", 50))
+MAX_BLOCKS = int(os.environ.get("LC_MAX_BLOCKS", 300))
+MAX_PENDING = int(os.environ.get("LC_MAX_PENDING", 100))
+MAX_DIFFICULTY = int(os.environ.get("LC_MAX_DIFFICULTY", 5))
+MAX_AMOUNT = 10**9
+
+def _int(name, lo, hi):
+    v = int(request.form.get(name, ""))  # ValueError -> handled below
+    if not lo <= v <= hi: raise ValueError(f"{name} must be between {lo} and {hi}")
+    return v
+
+@app.errorhandler(ValueError)
+@app.errorhandler(KeyError)
+def _bad_input(e):
+    flash("Rejected: invalid input"); return redirect("./")
+
+@app.after_request
+def _headers(r):
+    r.headers.setdefault("X-Content-Type-Options", "nosniff")
+    return r
+
 def label(addr):
     if addr == COINBASE: return "⛏ reward"
     for n, w in wallets.items():
@@ -53,6 +75,8 @@ def index():
 @app.post("/wallet")
 def new_wallet():
     n = request.form["name"].strip()[:20]
+    if not n or not n.isprintable(): flash("Pick a name"); return redirect("./")
+    if len(wallets) >= MAX_WALLETS: flash(f"Demo limit: {MAX_WALLETS} wallets"); return redirect("./")
     if n in wallets: flash("Name taken")
     else: wallets[n] = Wallet(n); flash(f"Created wallet {n} with a fresh ECDSA key pair")
     return redirect("./")
@@ -60,8 +84,10 @@ def new_wallet():
 @app.post("/send")
 def send():
     try:
+        if len(chain.mempool) >= MAX_PENDING:
+            raise ValueError("mempool full, mine a block first")
         s, r = wallets[request.form["sender"]], wallets[request.form["recipient"]]
-        chain.add_transaction(Transaction(s.address, r.address, int(request.form["amount"])).sign(s))
+        chain.add_transaction(Transaction(s.address, r.address, _int("amount", 1, MAX_AMOUNT)).sign(s))
         flash("Transaction signed and added to the mempool. Mine a block to confirm it.")
     except (ValueError, KeyError) as e:
         flash(f"Rejected: {e}")
@@ -69,6 +95,8 @@ def send():
 
 @app.post("/mine")
 def mine():
+    if len(chain.chain) >= MAX_BLOCKS:
+        flash(f"Demo limit: {MAX_BLOCKS} blocks. The server restarts with a fresh chain."); return redirect("./")
     try:
         b = chain.mine_block(wallets[request.form["miner"]].address)
         flash(f"Mined block #{b.index} in {chain.last_mine_seconds:.3f}s after {b.nonce} tries")
@@ -78,12 +106,12 @@ def mine():
 
 @app.post("/difficulty")
 def difficulty():
-    chain.difficulty = max(1, min(6, int(request.form["d"]))); flash(f"Difficulty set to {chain.difficulty} (applies to new blocks)")
+    chain.difficulty = _int("d", 1, MAX_DIFFICULTY); flash(f"Difficulty set to {chain.difficulty} (applies to new blocks)")
     return redirect("./")
 
 @app.post("/tamper")
 def tamper():
-    i = int(request.form["i"])
+    i = _int("i", 0, 10**6)
     if 0 < i < len(chain.chain) and chain.chain[i].transactions:
         chain.chain[i].transactions[0].amount += 1000; flash(f"Added 1000 to block {i}'s first transaction. Watch validation fail.")
     else: flash("No such block")
