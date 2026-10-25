@@ -31,6 +31,9 @@ export function Layout({ children }: LayoutProps) {
     { name: "Token Transfers", path: "/transfers", icon: ListTree },
     { name: "4D Mandelbulb", path: "/mandelbulb", icon: Sparkles },
     { name: "Mining (Simulation)", path: "/mining", icon: Pickaxe },
+    { name: "Learn to Earn", path: "/earn", icon: Sparkles },
+    { name: "S67M Perks", path: "/perks", icon: Sparkles },
+    { name: "About S67M", path: "/about-s67m", icon: Sparkles },
   ];
 
   return (

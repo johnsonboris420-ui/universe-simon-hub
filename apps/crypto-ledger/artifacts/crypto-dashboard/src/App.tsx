@@ -11,6 +11,9 @@ import MiningPage from "@/pages/mining";
 import NotFound from "@/pages/not-found";
 import AssetPage from "@/pages/asset";
 import HubPage from "@/pages/hub";
+import EarnPage from "@/pages/earn";
+import PerksPage from "@/pages/perks";
+import AboutS67M from "@/pages/about-s67m";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +34,9 @@ function Router() {
       <Route path="/mining" component={MiningPage} />
       <Route path="/asset/:chain/:id" component={AssetPage} />
       <Route path="/hub" component={HubPage} />
+      <Route path="/earn" component={EarnPage} />
+      <Route path="/perks" component={PerksPage} />
+      <Route path="/about-s67m" component={AboutS67M} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -6,6 +6,8 @@ import tokenTransfersRouter from "./token-transfers";
 import miningRouter from "./mining";
 import configRouter from "./config";
 import sepoliaRouter from "./sepolia";
+import earnRouter from "./earn";
+import perksRouter from "./perks";
 
 const router: IRouter = Router();
 
@@ -16,5 +18,7 @@ router.use(tokenTransfersRouter);
 router.use(miningRouter);
 router.use(configRouter);
 router.use(sepoliaRouter);
+router.use(earnRouter);
+router.use(perksRouter);
 
 export default router;

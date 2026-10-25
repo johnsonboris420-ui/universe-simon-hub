@@ -44,11 +44,14 @@ export default function HubPage() {
             <div><CardTitle>Universe Simon Shop</CardTitle><p className="text-xs text-muted-foreground mt-0.5">Original fractal art by Szymon: prints, posters and stickers</p></div>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
+            <a href={`${B}/fractal-house/`} className={btn + " !bg-purple-400 !text-black font-semibold"}>Fractal House: shop &amp; commissions</a>
+            <a href={`${B}/gallery/mandelbulb/`} className={btn}>Buy digital originals (ETH)</a>
             <a href="https://www.redbubble.com/people/SzymonFractals/shop" target="_blank" rel="noreferrer" className={btn}>Redbubble shop <ExternalLink className="w-3 h-3" /></a>
             <a href="https://www.redbubble.com/people/SzymonFractals/shop?collections=4599821" target="_blank" rel="noreferrer" className={btn}>Fractal Posters <ExternalLink className="w-3 h-3" /></a>
             <a href="https://www.redbubble.com/people/SzymonFractals/shop?collections=4599822" target="_blank" rel="noreferrer" className={btn}>Fractal Stickers <ExternalLink className="w-3 h-3" /></a>
             <a href={`${B}/gallery/`} className={btn}>Gallery</a>
             <a href={`${B}/gallery/#pay-eth`} className={btn}>Pay in ETH</a>
+            <Link href="/earn" className={btn}>Learn to earn S67M (test token, no cash value)</Link>
           </CardContent>
         </Card>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
