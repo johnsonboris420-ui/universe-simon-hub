@@ -78,6 +78,11 @@ export default function HubPage() {
             {aq && <p className="text-sm text-muted-foreground">Genetic algorithm: {aq.runs.length} runs, best fitness {aq.runs[0].start_best.toFixed(3)} → {aq.best.metrics.fitness.toFixed(3)}.</p>}
             <div className="flex gap-2"><Link href="/mandelbulb" className={btn}>Interactive Mandelbulb</Link></div>
           </Tile>
+          <Tile icon={Sparkles} title="HighLife × AQFLE experiment" tag="Ara · cellular automaton + genetic algorithm (22 Oct 2026)" color="bg-amber-500/15 text-amber-300">
+            <p className="text-sm text-muted-foreground">A HighLife (B36/S23) replicator draws a Sierpinski triangle in spacetime (box-count D ≈ 1.65). A GA evolved Bomber placements to enrich it; honest result: the Bomber destroys the replicator, so nothing truly beat the baseline.</p>
+            <a href={`${B}/hub-assets/highlife_compare.png`} target="_blank" rel="noreferrer"><img src={`${B}/hub-assets/highlife_compare.png`} alt="HighLife baseline vs evolved runs" className="rounded-lg border border-border/50 w-full" /></a>
+            <div className="flex gap-2"><a className={btn} target="_blank" rel="noreferrer" href={`${B}/hub-assets/highlife_report.md`}>Full report (.md)</a></div>
+          </Tile>
         </div>
       </div>
     </Layout>

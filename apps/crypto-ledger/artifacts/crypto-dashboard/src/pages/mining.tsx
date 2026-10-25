@@ -17,6 +17,47 @@ function computeMaxIter(blocksMined: number): number {
   return Math.min(Math.floor(50 + Math.log(blocksMined + 1) * 15), 150);
 }
 
+type SepoliaToken = { address: string; deployed: boolean; name?: string | null; symbol?: string | null; totalSupply?: number | null; mineable?: boolean; difficulty?: number | null; solves?: number | null; reward?: number | null; maxSupply?: number | null; lastSolveTime?: number | null; recentMints?: { to: string; amount: number | null; block: number; tx: string }[] };
+
+function SepoliaPanel() {
+  const { data, isError, isLoading } = useQuery<{ note: string; tokens: SepoliaToken[] }>({
+    queryKey: ["sepolia-tokens"], refetchInterval: 60_000,
+    queryFn: async () => { const r = await fetch(getApiUrl("/sepolia/tokens")); if (!r.ok) throw new Error("rpc"); return r.json(); },
+  });
+  const ES = "https://sepolia.etherscan.io";
+  const short = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
+  return (
+    <div className="rounded-xl border border-sky-500/40 bg-sky-500/5 p-4 space-y-3" data-testid="sepolia-panel">
+      <div className="flex flex-wrap items-center gap-2">
+        <h2 className="text-lg font-semibold text-foreground">Simon67 on Sepolia (live, read-only)</h2>
+        <span className="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/40">Sepolia testnet, no real value</span>
+      </div>
+      <p className="text-xs text-muted-foreground">Read straight from the public Sepolia chain. No wallet connection, no keys, nothing to sign.</p>
+      {isLoading && <p className="text-sm text-muted-foreground">Reading Sepolia…</p>}
+      {isError && <p className="text-sm text-red-300">Could not reach Sepolia right now.</p>}
+      <div className="grid md:grid-cols-2 gap-4">
+        {data?.tokens.map(t => (
+          <div key={t.address} className="rounded-lg border border-border/50 p-3 space-y-2 text-sm">
+            <div className="font-semibold">{t.name ?? "Token"} ({t.symbol ?? "?"}) {t.mineable && <span className="ml-1 text-xs text-emerald-300">proof-of-work mineable</span>}</div>
+            <a className="text-xs text-sky-300 underline break-all" href={`${ES}/address/${t.address}`} target="_blank" rel="noreferrer">{t.address}</a>
+            {!t.deployed ? <p className="text-muted-foreground">Not deployed at this address yet.</p> : (
+              <table className="w-full"><tbody>
+                <tr><td className="text-muted-foreground">Total supply</td><td className="text-right">{t.totalSupply?.toLocaleString()} {t.symbol}</td></tr>
+                {t.maxSupply != null && <tr><td className="text-muted-foreground">Max supply</td><td className="text-right">{t.maxSupply.toLocaleString()}</td></tr>}
+                {t.reward != null && <tr><td className="text-muted-foreground">Reward per solve</td><td className="text-right">{t.reward} {t.symbol}</td></tr>}
+                {t.difficulty != null && <tr><td className="text-muted-foreground">Difficulty (expected hashes)</td><td className="text-right">{Math.round(t.difficulty).toLocaleString()}</td></tr>}
+                {t.solves != null && <tr><td className="text-muted-foreground">Blocks solved</td><td className="text-right">{t.solves}</td></tr>}
+                {t.lastSolveTime != null && <tr><td className="text-muted-foreground">Last solve</td><td className="text-right">{new Date(t.lastSolveTime * 1000).toLocaleString()}</td></tr>}
+              </tbody></table>)}
+            {!!t.recentMints?.length && (<div><div className="text-xs text-muted-foreground mb-1">Recent mints</div>
+              {t.recentMints.map(m => (<div key={m.tx} className="flex justify-between text-xs"><a className="text-sky-300 underline" href={`${ES}/tx/${m.tx}`} target="_blank" rel="noreferrer">block {m.block}</a><span>{short(m.to)}</span><span>+{m.amount?.toLocaleString()}</span></div>))}
+            </div>)}
+          </div>))}
+      </div>
+    </div>
+  );
+}
+
 function renderMandelbulb(
   canvas: HTMLCanvasElement,
   power: number,
@@ -323,6 +364,7 @@ export default function MiningPage() {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto space-y-6">
+        <SepoliaPanel />
         <div className="space-y-1">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-orange-500/20 border border-orange-500/30 flex items-center justify-center">
