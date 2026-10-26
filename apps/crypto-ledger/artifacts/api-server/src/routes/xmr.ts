@@ -21,7 +21,7 @@ router.get("/xmr/stats", async (req, res) => {
         xmrPerHashPerDay: difficulty && reward ? (86400 * reward) / difficulty : null,
         poolHashrate: Number(pool?.pool_statistics?.hashRate) || null, poolMiners: Number(pool?.pool_statistics?.miners) || null,
         priceUsd: price?.monero?.usd ?? null, priceGbp: price?.monero?.gbp ?? null,
-        relayConfigured: !!process.env.XMR_RELAY_URL?.trim(),
+        relayConfigured: !!process.env.XMR_RELAY_URL?.trim(), relayUrl: process.env.XMR_RELAY_URL?.trim() || null,
         source: "api.moneroocean.stream + CoinGecko", fetchedAt: new Date().toISOString(),
       } };
     }

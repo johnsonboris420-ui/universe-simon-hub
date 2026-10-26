@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { XmrMiner } from "@/lib/xmr-miner";
 import { card, btn, input, api } from "./s67m-shared";
 import { ShareBar } from "@/components/share";
 
@@ -8,7 +9,7 @@ import { ShareBar } from "@/components/share";
 // configured (XMR_RELAY_URL on the server), Start stays disabled and the page only shows estimates.
 const XMR_RE = /^[48][1-9A-HJ-NP-Za-km-z]{94}$|^4[1-9A-HJ-NP-Za-km-z]{105}$/;
 
-type Stats = { xmrPerHashPerDay: number | null; priceUsd: number | null; priceGbp: number | null; poolHashrate: number | null; poolMiners: number | null; relayConfigured: boolean; source: string; fetchedAt: string };
+type Stats = { xmrPerHashPerDay: number | null; priceUsd: number | null; priceGbp: number | null; poolHashrate: number | null; poolMiners: number | null; relayConfigured: boolean; relayUrl: string | null; source: string; fetchedAt: string };
 
 export default function XmrMinePage() {
   const [addr, setAddr] = useState("");
@@ -16,11 +17,28 @@ export default function XmrMinePage() {
   const [cpu, setCpu] = useState(25);
   const [agree, setAgree] = useState(false);
   const [stats, setStats] = useState<Stats | null>(null);
-  const [testHs, setTestHs] = useState(100);
+  const [testHs, setTestHs] = useState(30);
   useEffect(() => { api("/xmr/stats").then(s => { if (!s.error) setStats(s); }); }, []);
   const valid = XMR_RE.test(addr.trim());
-  const maxThreads = Math.max(1, Math.min(8, navigator.hardwareConcurrency || 2));
-  const engineReady = false; // no vetted public relay / RandomX WASM engine available yet (see notice)
+  const maxThreads = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 2) - 1));
+  const engineReady = !!stats?.relayUrl;
+  const miner = useRef<XmrMiner | null>(null);
+  const [st, setSt] = useState({ status: "Idle", hashrate: 0, accepted: 0, error: "", connected: false });
+  const [since, setSince] = useState<number | null>(null);
+  const [now, setNow] = useState(Date.now());
+  const running = since !== null;
+  useEffect(() => { if (!running) return; const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, [running]);
+  useEffect(() => () => miner.current?.stop(), []); // leaving the page always stops mining
+  useEffect(() => { const h = () => { if (document.hidden) { miner.current?.stop(); miner.current = null; setSince(null); } }; document.addEventListener("visibilitychange", h); return () => document.removeEventListener("visibilitychange", h); }, []);
+  const start = () => {
+    if (!stats?.relayUrl || !valid || !agree || running) return;
+    setSt(s => ({ ...s, error: "", accepted: 0 }));
+    miner.current = new XmrMiner(stats.relayUrl, addr.trim(), threads, cpu, e => setSt(s => ({ ...s, ...Object.fromEntries(Object.entries(e).filter(([, v]) => v !== undefined)) } as any)));
+    miner.current.start(); setSince(Date.now());
+  };
+  const stop = () => { miner.current?.stop(); miner.current = null; setSince(null); };
+  useEffect(() => { miner.current?.setCpu(cpu); }, [cpu]);
+  const up = since ? Math.floor((now - since) / 1000) : 0;
   const perDay = stats?.xmrPerHashPerDay ? stats.xmrPerHashPerDay * testHs : null;
   const Stat = ({ k, v }: { k: string; v: string }) => (<div className="rounded-lg border border-border/50 p-3"><div className="text-xs text-muted-foreground">{k}</div><div className="text-lg font-mono">{v}</div></div>);
   return (
@@ -46,15 +64,15 @@ export default function XmrMinePage() {
             <input className={input} placeholder="4… or 8…" value={addr} onChange={e => setAddr(e.target.value)} /></label>
           {addr && <p className={`text-xs ${valid ? "text-emerald-300" : "text-red-300"}`}>{valid ? "Address format looks valid." : "That doesn't look like a Monero address."}</p>}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-            <label>Threads: {threads} of {maxThreads}<input type="range" min={1} max={maxThreads} value={threads} onChange={e => setThreads(+e.target.value)} className="w-full" /></label>
+            <label>Threads: {threads} of {maxThreads}<input type="range" min={1} max={maxThreads} value={threads} disabled={running} onChange={e => setThreads(+e.target.value)} className="w-full" /></label>
             <label>CPU per thread: {cpu}%<input type="range" min={10} max={100} step={5} value={cpu} onChange={e => setCpu(+e.target.value)} className="w-full" /></label>
           </div>
           <label className="text-sm flex gap-2 items-start"><input type="checkbox" checked={agree} onChange={e => setAgree(e.target.checked)} /> I understand this uses my CPU, earns very little, and I can stop at any time.</label>
           <div className="flex flex-wrap gap-2">
-            <button className={btn} disabled={!engineReady || !valid || !agree}>Start mining</button>
-            <button className={btn} disabled>Stop</button>
+            <button className={btn} data-testid="xmr-start" disabled={!engineReady || !valid || !agree || running} onClick={start}>Start mining</button>
+            <button className={btn} data-testid="xmr-stop" disabled={!running} onClick={stop}>Stop</button>
           </div>
-          {!engineReady && <p className="text-sm text-yellow-200" data-testid="xmr-unavailable">Mining is <b>not available yet</b>. Browsers can't talk to the pool directly; they need a WebSocket relay, and we haven't found a trustworthy public one that allows this site. Until we run our own, Start stays off. The estimate below still works.</p>}
+          {!engineReady && <p className="text-sm text-yellow-200" data-testid="xmr-unavailable">Mining is <b>not available yet</b>. Browsers can't talk to the pool directly; they need a WebSocket relay, and ours isn't online yet. Until it is, Start stays off. You can mine right now with the free <a className="underline" href="https://github.com/MoneroOcean/xmrig_setup" target="_blank" rel="noreferrer">XMRig setup for MoneroOcean</a> on your own computer (much faster than a browser). The estimate below still works.</p>}
           {valid && <a className="text-sm underline text-sky-300" href={`https://moneroocean.stream/#/dashboard?addr=${addr.trim()}`} target="_blank" rel="noreferrer">Open this address on the MoneroOcean dashboard</a>}
         </div>
         <div className={card}>
@@ -64,14 +82,17 @@ export default function XmrMinePage() {
         <div className={card}>
           <h2 className="font-semibold">Dashboard</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <Stat k="Status" v={engineReady ? "Idle" : "Unavailable"} /><Stat k="Hashrate" v="0 H/s" /><Stat k="Accepted shares" v="0" /><Stat k="Uptime" v="0:00" />
+            <Stat k="Status" v={engineReady ? st.status : "Unavailable"} /><Stat k="Hashrate" v={`${st.hashrate.toFixed(1)} H/s`} /><Stat k="Accepted shares" v={String(st.accepted)} /><Stat k="Uptime" v={`${Math.floor(up / 60)}:${String(up % 60).padStart(2, "0")}`} />
           </div>
+          <p className="text-xs text-muted-foreground">Relay: {st.connected ? "connected" : "not connected"}. Mining stops when you press Stop, leave this page, or hide the tab. Each thread uses about 256 MB of memory.</p>
+          {st.error && <p className="text-sm text-red-300">{st.error}</p>}
         </div>
         <div className={card}>
           <h2 className="font-semibold">Realistic earnings estimate</h2>
-          <label className="text-sm block">If your browser did {testHs} H/s<input type="range" min={20} max={400} step={10} value={testHs} onChange={e => setTestHs(+e.target.value)} className="w-full" /></label>
+          <label className="text-sm block">If your browser did {testHs} H/s<input type="range" min={5} max={300} step={5} value={testHs} onChange={e => setTestHs(+e.target.value)} className="w-full" /></label>
           {perDay ? <p className="text-sm">≈ <b>{perDay.toExponential(2)} XMR/day</b>{stats?.priceUsd && <> ≈ <b>${(perDay * stats.priceUsd).toFixed(4)}</b> / £{(perDay * (stats.priceGbp ?? 0)).toFixed(4)} per day, ${(perDay * stats.priceUsd * 30).toFixed(3)} per month</>}, before the pool fee. Reaching the 0.003 XMR payout would take about <b>{Math.round(0.003 / perDay).toLocaleString()} days</b>.</p>
             : <p className="text-sm text-muted-foreground">Live network stats unavailable; estimate shown when they load.</p>}
+          <p className="text-xs text-muted-foreground">Uses RandomX.js (BSD-3-Clause) in light mode, typically 10–60 H/s per browser.</p>
           {stats && <p className="text-xs text-muted-foreground">Estimate from current Monero difficulty and block reward ({stats.source}, {new Date(stats.fetchedAt).toLocaleString()}). MoneroOcean pool: {stats.poolHashrate ? `${(stats.poolHashrate / 1e6).toFixed(0)} MH/s` : "?"}, {stats.poolMiners ?? "?"} miners. Real results vary and are usually lower.</p>}
           <p className="text-xs"><a className="underline" href="https://moneroocean.stream" target="_blank" rel="noreferrer">moneroocean.stream</a></p>
         </div>
