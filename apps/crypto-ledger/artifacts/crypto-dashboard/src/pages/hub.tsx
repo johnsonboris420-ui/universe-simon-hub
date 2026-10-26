@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
+import { ShareBar } from "@/components/share";
 import { Link } from "wouter";
 import { useConfig } from "@/lib/wallet";
 import { Wallet, Blocks, Dna, Sparkles, ExternalLink, ShoppingBag } from "lucide-react";
@@ -52,6 +53,15 @@ export default function HubPage() {
             <a href={`${B}/gallery/`} className={btn}>Gallery</a>
             <a href={`${B}/gallery/#pay-eth`} className={btn}>Pay in ETH</a>
             <Link href="/earn" className={btn}>Learn to earn S67M (test token, no cash value)</Link>
+            <Link href="/xmr-mine" className={btn}>Monero mining dashboard (opt-in)</Link>
+          </CardContent>
+        </Card>
+        <Card className="border-orange-400/40 bg-orange-500/5" data-testid="xmr-card">
+          <CardHeader className="py-4"><CardTitle>New: Monero browser mining dashboard (opt-in)</CardTitle>
+            <p className="text-xs text-muted-foreground mt-1">Mine to your own XMR address from any modern browser, with an honest earnings estimate. Never auto-starts; uses your CPU; earnings are tiny.</p></CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            <div><Link href="/xmr-mine" className={btn}>Open the XMR dashboard</Link></div>
+            <ShareBar url="https://universe-simon-hub.onrender.com/" text="Universe Simon: fractal art, learning projects and an opt-in Monero mining dashboard" />
           </CardContent>
         </Card>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

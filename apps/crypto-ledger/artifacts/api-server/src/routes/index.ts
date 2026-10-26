@@ -8,6 +8,7 @@ import configRouter from "./config";
 import sepoliaRouter from "./sepolia";
 import earnRouter from "./earn";
 import perksRouter from "./perks";
+import xmrRouter from "./xmr";
 
 const router: IRouter = Router();
 
@@ -20,5 +21,6 @@ router.use(configRouter);
 router.use(sepoliaRouter);
 router.use(earnRouter);
 router.use(perksRouter);
+router.use(xmrRouter);
 
 export default router;

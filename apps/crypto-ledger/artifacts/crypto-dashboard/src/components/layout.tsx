@@ -34,6 +34,7 @@ export function Layout({ children }: LayoutProps) {
     { name: "Learn to Earn", path: "/earn", icon: Sparkles },
     { name: "S67M Perks", path: "/perks", icon: Sparkles },
     { name: "About S67M", path: "/about-s67m", icon: Sparkles },
+    { name: "XMR Mining (opt-in)", path: "/xmr-mine", icon: Pickaxe },
   ];
 
   return (

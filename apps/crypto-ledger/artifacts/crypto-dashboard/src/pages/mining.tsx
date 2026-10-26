@@ -32,7 +32,7 @@ function SepoliaPanel() {
         <h2 className="text-lg font-semibold text-foreground">Simon67 on Sepolia (live, read-only)</h2>
         <span className="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/40">Sepolia testnet, no real value</span>
       </div>
-      <p className="text-xs text-muted-foreground">Read straight from the public Sepolia chain. No wallet connection, no keys, nothing to sign.</p>
+      <p className="text-xs text-muted-foreground">Want to try real Monero mining in your own browser? See the <a className="underline" href="/xmr-mine">opt-in XMR dashboard</a>. Read straight from the public Sepolia chain. No wallet connection, no keys, nothing to sign.</p>
       {isLoading && <p className="text-sm text-muted-foreground">Reading Sepolia…</p>}
       {isError && <p className="text-sm text-red-300">Could not reach Sepolia right now.</p>}
       <div className="grid md:grid-cols-2 gap-4">

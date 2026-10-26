@@ -24,6 +24,18 @@ export function mountHosting(app: Express) {
       app.use(`/${sub}`, express.static(path.join(dir, sub), { index: "index.html" }));
       app.get(new RegExp(`^/${sub}(/.*)?$`), (_req, res) => res.sendFile(path.join(dir, sub, "index.html")));
     }
+    app.get("/xmr-mine", (_req, res) => {
+      const og = `<title>Monero Browser Mining (opt-in) | Universe Simon</title>
+    <meta name="description" content="Opt-in Monero (XMR) browser mining dashboard: mine to your own address on MoneroOcean, see a realistic earnings estimate. Never auto-starts; uses your CPU; earnings are tiny." />
+    <meta property="og:title" content="Monero Browser Mining (opt-in) | Universe Simon" />
+    <meta property="og:description" content="Your address, your CPU, honest earnings estimate. Never auto-starts." />
+    <meta property="og:image" content="https://universe-simon-hub.onrender.com/fractal-house/mandelbulb.jpg" />
+    <meta property="og:url" content="https://universe-simon-hub.onrender.com/xmr-mine" />
+    <meta name="twitter:card" content="summary_large_image" />`;
+      const html = fs.readFileSync(path.join(dir, "index.html"), "utf8")
+        .replace(/<title>[\s\S]*?<meta name="twitter:card"[^>]*>/, og);
+      res.type("html").send(html);
+    });
     app.use(express.static(dir, { index: false }));
     app.get(/^(?!\/api|\/learnchain).*/, (_req, res) => res.sendFile(path.join(dir, "index.html")));
   }

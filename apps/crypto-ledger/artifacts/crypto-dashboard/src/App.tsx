@@ -14,6 +14,7 @@ import HubPage from "@/pages/hub";
 import EarnPage from "@/pages/earn";
 import PerksPage from "@/pages/perks";
 import AboutS67M from "@/pages/about-s67m";
+import XmrMinePage from "@/pages/xmr-mine";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +38,7 @@ function Router() {
       <Route path="/earn" component={EarnPage} />
       <Route path="/perks" component={PerksPage} />
       <Route path="/about-s67m" component={AboutS67M} />
+      <Route path="/xmr-mine" component={XmrMinePage} />
       <Route component={NotFound} />
     </Switch>
   );
