@@ -1,0 +1,3 @@
+{ "name": "universe-simon-xmr-relay", "version": "0.1.0", "private": true, "type": "module",
+  "description": "WebSocket-to-Stratum relay for the opt-in browser miner. No hashing, no fee.",
+  "scripts": { "start": "node server.mjs" }, "dependencies": { "ws": "^8.18.0" }, "engines": { "node": ">=20" } }
